@@ -1,0 +1,211 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/themes/theme-base.css">
+        <link rel="stylesheet" href="css/themes/theme-pacifico.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="print-page" ng-class="themeClass" class="ng-scope theme-pacifico">
+
+            <!-- COVER LETTER -->
+            <div style="display:none" hidden id="cover-letter" ng-show="cover.body &amp;&amp; showingCoverLetter" class="ng-hide">
+                <span class="name ng-binding" ng-show="basics.name">Kiran Kurian</span>
+                <!-- CONTACT -->
+                <span class="contact">
+                    <hr>
+                    <span ng-show="basics.email" class="ng-binding"><i class="ion-android-mail" ng-show="showIcons"></i>kiran.kurian@rutgers.edu</span>
+                    <span style="display:none" ng-show="basics.phone" class="ng-binding ng-hide"><i class="ion-iphone" ng-show="showIcons"></i></span>
+                </span>
+                <!-- DATE -->
+                <span class="date ng-binding">Date: 12 October 2016</span>
+                <p class="text-adjust ng-binding"></p>
+            </div>
+
+            <span ng-show="showingResume" class="">
+                <!-- NAME -->
+                <span class="name ng-binding" ng-show="basics.name">Kiran Kurian</span>
+
+                <!-- CONTACT -->
+                <span class="contact">
+                    <hr>
+                    <span ng-show="basics.email" class="ng-binding"><i class="ion-android-mail" ng-show="showIcons"></i>kiran.kurian@rutgers.edu</span>
+                    <span style="display:none" ng-show="basics.phone" class="ng-binding ng-hide"><i class="ion-iphone phonei" ng-show="showIcons"></i></span>
+                    <div class="block">
+                        <span ng-show="basics.linkedin" class="ng-binding"><i class="ion-social-linkedin" ng-show="showIcons"></i>linkedin.com/in/KiranJKurian</span>
+                        <span style="display:none" ng-show="basics.twitter" class="ng-binding ng-hide"><i class="ion-social-twitter" ng-show="showIcons"></i></span>
+                        <span style="display:none" ng-show="basics.skype" class="ng-binding ng-hide"><i class="ion-social-skype" ng-show="showIcons"></i></span>
+                        <span ng-show="basics.link" class="ng-binding"><i class="ion-android-cloud" ng-show="showIcons"></i>github.com/KiranJKurian</span>
+                    </div>
+                </span>
+
+                <!-- SUMMARY -->
+                <span hidden class="summary" ng-show="summary.body">
+                    <hr>
+                    <div class="pdf-header" ng-click="editSummaryTitle()"><span class="ng-binding">Professional Summary</span></div>
+                    <p class="text-adjust ng-binding">Software Engineer and Computer Science major with experience working as a Web Developer at education and financial institutions as well as startup companies. Experienced in full stack Web Development, Python, NodeJS, ReactJS, Java, Javascript, Redux, MongoDB, HTML, CSS, Linux, Google Polymer, and jQuery.</p>
+                </span>
+
+                <!-- QUALIFICATIONS -->
+                <span class="qualifications" ng-show="qualifications.length > 0">
+                    <hr>
+                    <span class="pdf-header" ng-click="editQualificationsHeader()"><span class="ng-binding">Education</span></span>
+                    <span ui-sortable="" ng-model="qualifications" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ui-sortable ng-not-empty">
+                        <!-- ngRepeat: item in qualifications --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in qualifications">
+                            <span ng-show="qualifications[$index].qualificationTitle" class="ng-binding">Bachelors of Science in Computer Science</span>
+                            <span ng-show="qualifications[$index].qualificationInstitution" class="ng-binding">Rutgers University, New Brunswick</span>
+                            <span ng-show="qualifications[$index].qualificationLocation" class="ng-binding">New Brunswick, NJ</span>
+                            <span ng-show="qualifications[$index].qualificationCompletion" class="ng-binding">Spring 2018</span>
+                            <span ng-show="qualifications[$index].qualificationGpa" class="ng-binding ng-hide">3.32 Major GPA</span>
+                        </div><!-- end ngRepeat: item in qualifications -->
+                    </span>
+                </span>
+
+                <!-- EXPERIENCE -->
+                <span class="experience" ng-show="jobs.length > 0">
+                    <hr>
+                    <span class="pdf-header" ng-click="editJobsHeader()"><span class="ng-binding">Experience</span></span>
+                    <span ui-sortable="" ng-model="jobs" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ui-sortable ng-not-empty">
+                        <!-- ngRepeat: item in jobs -->
+                        <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
+                            <span ng-show="jobs[$index].jobTitle" class="ng-binding">Software Engineer</span>
+                            <span ng-show="jobs[$index].jobEmployer" class="ng-binding">Belstone</span>
+                            <span ng-show="jobs[$index].jobLocation" class="ng-binding">New York, NY</span>
+                            <span ng-show="jobs[$index].jobTime" class="ng-binding">July, 2016 - Present</span>
+                            <ul>
+                                <li>Designed and built proprietary software to facilitate merger & acquisition advising</li>
+                                <li>Worked on several Web Applications and was solely responsible for the creation of pages and components</li>
+                                <li>Built frontend Web App using React.JS which included interactive forms (with dynamic contents based on state) made with Redux & Redux Forms and styled with Material-UI and custom SCSS</li>
+                                <li>Created backend API endpoints in Node.JS that connected to MongoDB and created new feature sets for separate Python backend</li>
+                        </div><!-- end ngRepeat: item in jobs -->
+                        <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
+                            <span ng-show="jobs[$index].jobTitle" class="ng-binding">Software Engineer</span>
+                            <span ng-show="jobs[$index].jobEmployer" class="ng-binding">FashionBoss</span>
+                            <span style="display:none" ng-show="jobs[$index].jobLocation" class="ng-binding ng-hide"></span>
+
+                            <span ng-show="jobs[$index].jobTime" class="ng-binding">January 2016 - March 2016</span>
+                            <ul>
+                                <li>Redesigned SmartBoss product from scratch to create responsive and intuitive UI/UX</li>
+                                <li>Implemented various APIs to integrate with the BossQ algorithm.</li>
+                                <li>Created several mobile friendly interactive pages using Google Polymer 1.0</li>
+                        </div><!-- end ngRepeat: item in jobs -->
+                        <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
+                            <span ng-show="jobs[$index].jobTitle" class="ng-binding">Software Developer</span>
+                            <span ng-show="jobs[$index].jobEmployer" class="ng-binding">Rutgers Laboratory of Computer Science Research</span>
+                            <span ng-show="jobs[$index].jobLocation" class="ng-binding">Piscataway, NJ</span>
+                            <span ng-show="jobs[$index].jobTime" class="ng-binding">Summer 2015</span>
+                            <ul>
+                                <li>Designed successful UI to ensure intuitive user experience.</li>
+                                <li>Created Python Flask application to check for scheduling conflicts.</li>
+                                <li>Worked with Zend Framework to complete Rutgers SAS Special Permission Number Application.</li>
+                                    <li>Created five Web Development Tutorials to be used for mandatory skills training of all new employees.</li>
+                                    <li>Delivered weekly presentations to demonstrate use-cases and interfaces of applications.</li>
+                        </div><!-- end ngRepeat: item in jobs -->
+                        <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
+                            <span ng-show="jobs[$index].jobTitle" class="ng-binding">Codecademy Advisor</span>
+                            <span ng-show="jobs[$index].jobEmployer" class="ng-binding">Codecademy</span>
+                            <span style="display:none" ng-show="jobs[$index].jobLocation" class="ng-binding ng-hide"></span>
+                            <span ng-show="jobs[$index].jobTime" class="ng-binding">January 2016 - Present</span>
+                            <ul>
+                                <li>Advise learners about various curriculum tracks for web development, project completion, and course material for all courses offered by Codecademy, including courses on HTML, CSS, Javascript, jQuery, Python, Ruby, PHP, SQL, Git, Java, AngularJS, and Ruby on Rails.</li>
+                                <li>Work as a team with other Codecademy advisors to ensure quality and speed of responses to learners who need assistance.</li>
+                        </div><!-- end ngRepeat: item in jobs -->
+                    </span>
+                </span>
+
+                <!-- PROJECTS -->
+                <span class="projects" ng-show="projects.length > 0">
+                    <hr>
+                    <span class="pdf-header" ng-click="editProjectsHeader()"><span class="ng-binding">Projects</span></span>
+                    <span ui-sortable="" ng-model="projects" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ui-sortable ng-not-empty">
+                        <!-- ngRepeat: item in projects --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in projects">
+                            <span class="ng-binding">RUScheduler</span>
+                            <p class="text-adjust ng-binding"><i>RUScheduler.com</i>
+                            <i>github.com/KiranJKurian/RUScheduler</i>
+        Python-Flask Web App using Google Polymer, pulls info from hidden Rutgers API and authenticates with Google OAuth to add Rutgers students' schedules to their Google Calendar.</p>
+                        </div><!-- end ngRepeat: item in projects --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in projects">
+                            <span class="ng-binding">TextTalk - HackRU Sponsor Award(Addteq, Spring 2015)</span>
+                            <p class="text-adjust ng-binding"><i>TextTalk.Heroku.com</i>
+        Python-Flask Web App, user uploads file for TexTTalk to output text-to-speech of file's text.</p>
+                        </div><!-- end ngRepeat: item in projects -->
+                    </span>
+                </span>
+
+                <!-- SKILLS -->
+                <span class="skills" ng-show="skills.length > 0">
+                    <hr>
+                    <span class="pdf-header" ng-click="editSkillsHeader()"><span class="ng-binding">Skills</span></span>
+                    <span ui-sortable="" ng-model="skills" class="skillswrapper ng-pristine ng-untouched ng-valid ng-isolate-scope ui-sortable ng-not-empty">
+                        <!-- ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Python</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Javascript</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Web Development</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">ReactJS</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">NodeJS</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">jQuery</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">HTML</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">CSS</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Java</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Linux</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Polymer</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">MongoDB</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                        <span class="ng-binding">SQL</span>
+                        </div><!-- end ngRepeat: item in skills --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in skills">
+                            <span class="ng-binding">Redux</span>
+                        </div><!-- end ngRepeat: item in skills -->
+                    </span>
+                </span>
+
+                 <!-- ACTIVITIES -->
+                <span class="projects" ng-show="projects.length > 0">
+                    <hr>
+                    <span class="pdf-header" ng-click="editProjectsHeader()"><span class="ng-binding">Activities</span></span>
+                    <span ui-sortable="" ng-model="projects" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ui-sortable ng-not-empty">
+                        <!-- ngRepeat: item in projects --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in projects">
+                            <span class="ng-binding">Undergraduate Student Alliance of Computer Scientists</span>
+                            <p class="text-adjust ng-binding"><i>Treasurer 2016 - Present</i></p>
+                            <p class="text-adjust ng-binding"><i>Social Chair 2015 - 2016</i></p>
+                        </div><!-- end ngRepeat: item in projects --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in projects">
+                            <span class="ng-binding">HackRU</span>
+                            <p class="text-adjust ng-binding"><i>Director of Finance 2016 - Present</i></p>
+                        </div><!-- end ngRepeat: item in projects --><div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in projects">
+                            <span class="ng-binding">Phi Sigma Kappa - Nu Tetarton Chapter</span>
+                            <p class="text-adjust ng-binding"><i>President 2016 - Present</i></p>
+                            <p class="text-adjust ng-binding"><i>Secretary 2016</i></p>
+                        </div><!-- end ngRepeat: item in projects -->
+                    </span>
+                </span>
+
+                <!-- CONTACT -->
+                <span class="contact two">
+                    <hr>
+                    <div class="pdf-header ng-binding" id="basicHeaderTop" ng-click="editBasicHeader()" ng-show="kiran.kurian@rutgers.edu">Contact</div>
+                    <div class="contactwrapper">
+                        <span ng-show="basics.email" class="ng-binding"><i class="ion-android-mail" ng-show="showIcons"></i>kiran.kurian@rutgers.edu</span>
+                        <span style="display:none" ng-show="basics.phone" class="ng-binding ng-hide"><i class="ion-iphone" ng-show="showIcons"></i></span>
+                        <span ng-show="basics.linkedin" class="ng-binding"><i class="ion-social-linkedin" ng-show="showIcons"></i>linkedin.com/in/KiranJKurian</span>
+                        <span style="display:none" ng-show="basics.twitter" class="ng-binding ng-hide"><i class="ion-social-twitter" ng-show="showIcons"></i></span>
+                        <span style="display:none" ng-show="basics.skype" class="ng-binding ng-hide"><i class="ion-social-skype" ng-show="showIcons"></i></span>
+                        <span ng-show="basics.link" class="ng-binding"><i class="ion-android-cloud" ng-show="showIcons"></i>github.com/KiranJKurian</span>
+                    </div>
+                </span>
+
+            </span>
+
+        </div>
+    </body>
+</html>
