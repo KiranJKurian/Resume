@@ -70,6 +70,17 @@
                     <span ui-sortable="" ng-model="jobs" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ui-sortable ng-not-empty">
                         <!-- ngRepeat: item in jobs -->
                         <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
+                            <span ng-show="jobs[$index].jobTitle" class="ng-binding">Summer Technology Analyst</span>
+                            <span ng-show="jobs[$index].jobEmployer" class="ng-binding">Goldman Sachs</span>
+                            <span ng-show="jobs[$index].jobLocation" class="ng-binding">Jersey City, NJ</span>
+                            <span ng-show="jobs[$index].jobTime" class="ng-binding">May 2017 - August 2017</span>
+                            <ul>
+                                <li>Researched and implemented data visualization libraries for use in internal project using ReactJS and D3</li>
+                                <li>Collaborated with team in United Kingdom and contributed towards firmwide platform library</li>
+                                <li>Designed graph structures and built graph algorithms for optimizing efficient data usage</li>
+                                <li>Won first place in internal nationwide intern coding competition</li>
+                        </div><!-- end ngRepeat: item in jobs -->
+                        <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
                             <span ng-show="jobs[$index].jobTitle" class="ng-binding">Software Engineer</span>
                             <span ng-show="jobs[$index].jobEmployer" class="ng-binding">Belstone</span>
                             <span ng-show="jobs[$index].jobLocation" class="ng-binding">New York, NY</span>
@@ -97,11 +108,9 @@
                             <span ng-show="jobs[$index].jobLocation" class="ng-binding">Piscataway, NJ</span>
                             <span ng-show="jobs[$index].jobTime" class="ng-binding">Summer 2015</span>
                             <ul>
-                                <li>Designed successful UI to ensure intuitive user experience.</li>
                                 <li>Created Python Flask application to check for scheduling conflicts.</li>
-                                <li>Worked with Zend Framework to complete Rutgers SAS Special Permission Number Application.</li>
-                                    <li>Created five Web Development Tutorials to be used for mandatory skills training of all new employees.</li>
-                                    <li>Delivered weekly presentations to demonstrate use-cases and interfaces of applications.</li>
+                                <li>Created five Web Development Tutorials to be used for mandatory skills training of all new employees.</li>
+                                <li>Delivered weekly presentations to demonstrate use-cases and interfaces of applications.</li>
                         </div><!-- end ngRepeat: item in jobs -->
                         <div class="item sortable ng-scope ui-sortable-handle" ng-repeat="item in jobs">
                             <span ng-show="jobs[$index].jobTitle" class="ng-binding">Codecademy Advisor</span>
@@ -110,7 +119,6 @@
                             <span ng-show="jobs[$index].jobTime" class="ng-binding">January 2016 - Present</span>
                             <ul>
                                 <li>Advise learners about various curriculum tracks for web development, project completion, and course material for all courses offered by Codecademy, including courses on HTML, CSS, Javascript, jQuery, Python, Ruby, PHP, SQL, Git, Java, AngularJS, and Ruby on Rails.</li>
-                                <li>Work as a team with other Codecademy advisors to ensure quality and speed of responses to learners who need assistance.</li>
                         </div><!-- end ngRepeat: item in jobs -->
                     </span>
                 </span>
